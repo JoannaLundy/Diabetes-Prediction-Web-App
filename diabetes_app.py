@@ -18,6 +18,22 @@ import streamlit as st
 
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
+import streamlit as st
+
+# Input fields for user data
+pregnancies = st.number_input("Number of Pregnancies", min_value=0, max_value=20, value=1)
+glucose = st.number_input("Glucose Level", min_value=0, max_value=200, value=100)
+blood_pressure = st.number_input("Blood Pressure", min_value=0, max_value=150, value=70)
+skin_thickness = st.number_input("Skin Thickness", min_value=0, max_value=100, value=20)
+insulin = st.number_input("Insulin Level", min_value=0, max_value=900, value=80)
+bmi = st.number_input("BMI", min_value=0.0, max_value=60.0, value=25.0, format="%.1f")
+diabetes_pedigree = st.number_input("Diabetes Pedigree Function", min_value=0.0, max_value=2.5, value=0.5, format="%.2f")
+age = st.number_input("Age", min_value=0, max_value=120, value=30)
+
+# Prediction Button
+if st.button("Predict Diabetes Risk"):
+    st.write("Prediction will go here.")
+
 
 import sys as _sys
 
