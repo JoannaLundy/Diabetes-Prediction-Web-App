@@ -15,10 +15,14 @@
 
 """Generic entry point script."""
 import streamlit as st
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import load_model
 model = load_model("diabetes_model.h5")
+
+
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
-import streamlit as st
 
 # Input fields for user data
 pregnancies = st.number_input("Number of Pregnancies", min_value=0, max_value=20, value=1)
