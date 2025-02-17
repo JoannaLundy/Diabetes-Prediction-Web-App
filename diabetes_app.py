@@ -21,6 +21,7 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 import requests
 model_path= "diabetes_model.h5"
+model = tf.keras.models.load_model(model_path)
 if os.path.exists(model_path):
     try:
         model = load_model(model_path)
