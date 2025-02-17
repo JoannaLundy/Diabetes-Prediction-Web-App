@@ -20,7 +20,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 import requests
-model = load_model("diabetes_model.h5")
+model = load_model("diabetes_model (1).h5")
 github_model_url="https://raw.githubusercontent.com/JoannaLundy/Diabetes-Prediction-Web-App/refs/heads/main/diabetes_model.h5"
 #file path did not read .h5 so I had to force download
 if not os.path.exists(model_path):
