@@ -15,7 +15,7 @@
 
 """Generic entry point script."""
 import streamlit as st
-
+model = load_model("diabetes_model.h5")
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
 import streamlit as st
@@ -32,7 +32,9 @@ age = st.number_input("Age", min_value=0, max_value=120, value=30)
 
 # Prediction Button
 if st.button("Predict Diabetes Risk"):
-    st.write("Prediction will go here.")
+    prediction = model.predict(user_input)
+    result = "Diabetic" if prediction[0][0] > 0.5 else "Non-Diabetic"
+    st.write(f"**Prediction: {result}**")
 
 
 import sys as _sys
