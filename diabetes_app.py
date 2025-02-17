@@ -14,6 +14,11 @@
 # ==============================================================================
 
 """Generic entry point script."""
+import streamlit as st
+
+st.title("Diabetes Prediction Web App")
+st.write("Enter your health details below to predict the risk of diabetes.")
+
 import sys as _sys
 
 from absl.app import run as _run
