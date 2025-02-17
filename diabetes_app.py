@@ -20,21 +20,15 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 import requests
-model = load_model("diabetes_model (1).h5")
-github_model_url="https://raw.githubusercontent.com/JoannaLundy/Diabetes-Prediction-Web-App/refs/heads/main/diabetes_model.h5"
-#file path did not read .h5 so I had to force download
-if not os.path.exists(model_path):
-    st.warning("Downloading model from GitHub...")
-    response = requests.get(github_model_url)
-    with open(model_path, "wb") as f:
-        f.write(response.content)
-
-# Try loading the model
-try:
-    model = load_model(model_path)
-    st.success("✅ Model loaded successfully!")
-except Exception as e:
-    st.error(f"❌ Error loading model: {e}")
+model_path= "diabetes_model.h5"
+if os.path.exists(model_path):
+    try:
+        model = load_model(model_path)
+        st.success("✅ Model loaded successfully!")
+    except Exception as e:
+        st.error(f"❌ Error loading model: {e}")
+else:
+    st.error(f"❌ Model file '{model_path}' not found! Please check if it's uploaded to GitHub.")
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
 
