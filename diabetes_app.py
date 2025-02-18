@@ -23,16 +23,7 @@ from tensorflow.keras.models import load_model
 import requests
 model_url="https://raw.githubusercontent.com/JoannaLundy/Diabetes-Prediction-Web-App/refs/heads/main/diabetes_model.h5"
 model_path= "diabetes_model.h5"
-if not os.path.exists(MODEL_PATH):
-    st.info("Downloading model, please wait...")
-    urllib.request.urlretrieve(MODEL_URL, MODEL_PATH)
-
-# Load the model
-try:
-    model = tf.keras.models.load_model(MODEL_PATH)
-    st.success("✅ Model loaded successfully!")
-except Exception as e:
-    st.error(f"❌ Error loading model: {e}")
+ 
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
 
