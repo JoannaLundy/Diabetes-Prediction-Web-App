@@ -33,8 +33,7 @@ if not os.path.exists(model_path):
             if chunk:
                 file.write(chunk)
     st.success("✅ Model downloaded successfully!")
- try:
-    model = tf.keras.models.load_model(model_path)
+ try: model = tf.keras.models.load_model(model_path)
     st.success("✅ Model loaded successfully!")
 except Exception as e:
     st.error(f"❌ Error loading model: {e}")
