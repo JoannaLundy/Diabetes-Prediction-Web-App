@@ -38,6 +38,8 @@ diabetes_pedigree = st.number_input("Diabetes Pedigree Function", min_value=0.0,
 age = st.number_input("Age", min_value=0, max_value=120, value=30)
 
 # Prediction Button
+user_input = np.array([[pregnancies, glucose, blood_pressure, skin_thickness,
+                        insulin, bmi, diabetes_pedigree, age]])
 if st.button("Predict Diabetes Risk"):
     prediction = model.predict(user_input)
     result = "Diabetic" if prediction[0][0] > 0.5 else "Non-Diabetic"
