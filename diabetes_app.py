@@ -24,7 +24,21 @@ import requests
 # Define the model URL from GitHub
 model_url="https://raw.githubusercontent.com/JoannaLundy/Diabetes-Prediction-Web-App/refs/heads/main/diabetes_model.h5"
 model_path= "diabetes_model.h5"
- 
+
+if not os.path.exists(model_path):
+    st.info("Downloading model file... ⏳")
+    response = requests.get(model_url, stream=True)
+    with open(model_path, "wb") as file:
+        for chunk in response.iter_content(chunk_size=1024):
+            if chunk:
+                file.write(chunk)
+    st.success("✅ Model downloaded successfully!")
+ try:
+    model = tf.keras.models.load_model(MODEL_PATH)
+    st.success("✅ Model loaded successfully!")
+except Exception as e:
+    st.error(f"❌ Error loading model: {e}")
+
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
 
