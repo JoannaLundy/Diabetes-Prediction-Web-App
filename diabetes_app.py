@@ -21,8 +21,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 import requests
-# Define the model URL from GitHub
-model.save("diabetes_model.keras")  
+# Define the model URL from GitHub 
 model_path= "diabetes_model.keras"
 
 st.title("Diabetes Prediction Web App")
