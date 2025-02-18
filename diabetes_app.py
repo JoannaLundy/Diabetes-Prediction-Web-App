@@ -22,8 +22,8 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 import requests
 # Define the model URL from GitHub
-model_url="https://raw.githubusercontent.com/JoannaLundy/Diabetes-Prediction-Web-App/refs/heads/main/diabetes_model.h5"
-model_path= "diabetes_model.h5"
+model_url="https://raw.githubusercontent.com/JoannaLundy/Diabetes-Prediction-Web-App/refs/heads/main/diabetes_model.keras"
+model_path= "diabetes_model.keras"
 
 if not os.path.exists(model_path):
     st.info("Downloading model file... ⏳")
