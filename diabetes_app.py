@@ -28,22 +28,6 @@ import numpy as np
 import tensorflow as tf
 import requests
 
-# Download model from GitHub if it doesn't exist
-MODEL_PATH = "diabetes_model(1).h5"
-
-if not os.path.exists(MODEL_PATH):
-    st.write("Downloading model...")
-    response = requests.get(MODEL_URL)
-    with open(MODEL_PATH, "wb") as f:
-        f.write(response.content)
-    st.write("✅ Model downloaded successfully!")
-
-# Load model with caching to prevent reloading on every interaction
-@st.cache_resource
-def load_model():
-    return tf.keras.models.load_model(MODEL_PATH)
-
-model = load_model()
 
 
 st.title("Diabetes Prediction Web App")
