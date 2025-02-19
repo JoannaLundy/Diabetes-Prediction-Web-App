@@ -27,10 +27,19 @@ import urllib.request
 import numpy as np
 import tensorflow as tf
 import requests
+import gdown
 
-MODEL_URL = "https://raw.githubusercontent.com/JoannaLundy/Diabetes-Prediction-Web-App/refs/heads/main/diabetes_model.h5"
-MODEL_PATH = "diabetes_model.keras"
+# Replace with your actual file ID
+file_id = "10sqOKVbFwKadQ7DXtPHCPE7rzDpXlPLm"
+output = "diabetes_model.keras"
 
+# Download the model file from Google Drive
+gdown.download(f"https://drive.google.com/uc?id={file_id}", output, quiet=False)
+
+# Load the model
+model = tf.keras.models.load_model(output)
+
+print("Model successfully loaded!")
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
 
