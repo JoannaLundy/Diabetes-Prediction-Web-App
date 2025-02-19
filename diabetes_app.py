@@ -29,7 +29,7 @@ import tensorflow as tf
 import requests
 
 MODEL_URL = "https://raw.githubusercontent.com/your-username/your-repo/main/diabetes_model.keras"
-MODEL_PATH = "diabetes_model.keras
+MODEL_PATH = "diabetes_model(2).h5
 
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
