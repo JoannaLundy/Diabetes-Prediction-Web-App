@@ -30,6 +30,17 @@ import requests
 
 MODEL_URL = "https://raw.githubusercontent.com/JoannaLundy/Diabetes-Prediction-Web-App/refs/heads/main/diabetes_model.h5"
 MODEL_PATH = "diabetes_model.h5"
+@st.cache_resource
+def load_model():
+    return tf.keras.models.load_model(MODEL_PATH)
+
+# Load the model BEFORE making predictions
+try:
+    model = load_model()
+    st.write("✅ Model loaded successfully!")
+except Exception as e:
+    st.error(f"🚨 Error loading model: {e}")
+    st.stop()  # Stop execution if model fails to load
 
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
