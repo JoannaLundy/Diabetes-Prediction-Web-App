@@ -22,7 +22,7 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 import requests
 # Define the model URL from GitHub 
-model_path= "diabetes_model.keras"
+model_path= "diabetes_model(1).h5"
 
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
