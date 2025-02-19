@@ -29,7 +29,7 @@ import tensorflow as tf
 import requests
 
 # Download model from GitHub if it doesn't exist
-MODEL_URL = "https://raw.githubusercontent.com/your-username/your-repo/main/diabetes_model.h5"
+MODEL_URL = "https://github.com/JoannaLundy/Diabetes-Prediction-Web-App/raw/refs/heads/main/diabetes_model%20(1).h5"
 MODEL_PATH = "diabetes_model(1).h5"
 
 if not os.path.exists(MODEL_PATH):
