@@ -28,7 +28,7 @@ import numpy as np
 import tensorflow as tf
 import requests
 
-MODEL_URL = "https://raw.githubusercontent.com/your-username/your-repo/main/diabetes_model.keras"
+MODEL_URL = "https://raw.githubusercontent.com/JoannaLundy/Diabetes-Prediction-Web-App/refs/heads/main/diabetes_model%20(2).h5"
 MODEL_PATH = "diabetes_model(2).h5
 
 st.title("Diabetes Prediction Web App")
