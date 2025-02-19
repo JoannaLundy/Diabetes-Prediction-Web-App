@@ -21,8 +21,31 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 import requests
-# Define the model URL from GitHub 
-model_path= "diabetes_model(1).h5"
+import os
+import streamlit as st
+import urllib.request
+import numpy as np
+import tensorflow as tf
+import requests
+
+# Download model from GitHub if it doesn't exist
+MODEL_URL = "https://raw.githubusercontent.com/your-username/your-repo/main/diabetes_model.h5"
+MODEL_PATH = "diabetes_model(1).h5"
+
+if not os.path.exists(MODEL_PATH):
+    st.write("Downloading model...")
+    response = requests.get(MODEL_URL)
+    with open(MODEL_PATH, "wb") as f:
+        f.write(response.content)
+    st.write("✅ Model downloaded successfully!")
+
+# Load model with caching to prevent reloading on every interaction
+@st.cache_resource
+def load_model():
+    return tf.keras.models.load_model(MODEL_PATH)
+
+model = load_model()
+
 
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
