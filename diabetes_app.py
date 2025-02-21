@@ -22,7 +22,7 @@ import tensorflow as tf
 import requests
 import os
 import streamlit as st
-import urllib.request
+
 import numpy as np
 import tensorflow as tf
 import requests
