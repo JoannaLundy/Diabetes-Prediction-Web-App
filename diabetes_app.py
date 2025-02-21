@@ -16,7 +16,6 @@
 """Generic entry point script."""
 import os
 import streamlit as st
-import urllib.request
 import numpy as np
 import tensorflow as tf
 
