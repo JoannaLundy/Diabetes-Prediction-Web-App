@@ -27,7 +27,7 @@ import urllib.request
 import numpy as np
 import tensorflow as tf
 import requests
-
+model_path="diabetes_model.keras"
 st.title("Diabetes Prediction Web App")
 st.write("Enter your health details below to predict the risk of diabetes.")
 
