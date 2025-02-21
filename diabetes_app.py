@@ -50,7 +50,7 @@ user_input = np.array([[pregnancies, glucose, blood_pressure, skin_thickness,
                         insulin, bmi, diabetes_pedigree, age]])
 if st.button("Predict Diabetes Risk"):
     prediction = model_path.predict(user_input)
-    result = "Diabetic" if prediction[0][0] > 0.5 else "Non-Diabetic"
+    result = "Diabetic💉" if prediction[0][0] > 0.5 else "Non-Diabetic✨"
     st.write(f"**Prediction: {result}**")
 
 
